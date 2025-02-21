@@ -1,0 +1,80 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+interface Props {
+  images: {
+    url: string;
+    alt: string;
+  }[];
+}
+
+const { images } = Astro.props;
+---
+
+<section class="carousel-container">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {
+        images.map((image) => (
+          <div class="swiper-slide">
+            <img src={image.url} alt={image.alt} />
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<style>
+  .carousel-container {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 25px;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+  // Initialize Swiper
+  const swiper = new Swiper('.swiper', {
+    modules: [Navigation, Pagination, Autoplay],
+    
+    // Optional parameters
+    loop: true,
+    
+    // Enable autoplay
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
