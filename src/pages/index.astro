@@ -2,12 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Slider from '../components/Slider.astro';
-import { images } from '../data/images'
+import { desktopImages, mobileImages } from '../data/images';
 import Cards from '../components/Cards.astro';
+import Services from '../components/Services.astro';
 ---
 
 <Layout>
 	<Header />
-	<Slider images={images}/>
+	<Slider desktopImages={desktopImages} mobileImages={mobileImages} />
 	<Cards />
+	<Services />
 </Layout>
