@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css'
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Slider from '../components/Slider.astro';
@@ -9,7 +10,9 @@ import Services from '../components/Services.astro';
 
 <Layout>
 	<Header />
-	<Slider desktopImages={desktopImages} mobileImages={mobileImages} />
-	<Cards />
-	<Services />
+	<main class="md:pl-[300px]">
+		<Slider desktopImages={desktopImages} mobileImages={mobileImages} />
+		<Cards />
+		<Services />
+	</main>
 </Layout>

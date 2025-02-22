@@ -71,7 +71,7 @@ import "swiper/css";
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <article
-                    class="relative rounded-4xl w-[85vw] mx-2 aspect-square overflow-hidden"
+                    class="relative rounded-4xl w-[80vw] mx-2 aspect-square overflow-hidden"
                 >
                     <header class="absolute top-4 left-4 z-10">
                         <h2 class="rounded-lg text-lg px-2 py-1">
@@ -90,7 +90,7 @@ import "swiper/css";
 
             <div class="swiper-slide">
                 <article
-                    class="relative rounded-4xl w-[85vw] mx-2 aspect-square overflow-hidden"
+                    class="relative rounded-4xl w-[80vw] mx-2 aspect-square overflow-hidden"
                 >
                     <header class="absolute top-4 left-4 z-10">
                         <h2 class="rounded-lg text-lg px-2 py-1">
@@ -109,7 +109,7 @@ import "swiper/css";
 
             <div class="swiper-slide">
                 <article
-                    class="relative rounded-4xl w-[85vw] mx-2 aspect-square overflow-hidden"
+                    class="relative rounded-4xl w-[80vw] mx-2 aspect-square overflow-hidden"
                 >
                     <header class="absolute top-4 left-4 z-10">
                         <h2 class="rounded-lg text-lg px-2 py-1">
@@ -134,7 +134,7 @@ import "swiper/css";
     /* Estilos responsive modificados */
     .mobile-cards .swiper-slide {
         width: 75% !important;
-        margin-right: 10px;
+        margin-right: 15px;
         transition: transform 0.3s;
     }
 
@@ -144,8 +144,8 @@ import "swiper/css";
     }
 
     .mobile-cards .swiper-wrapper {
-        padding-left: 20px;
-        padding-right: 30%;
+        padding-left: 30px;
+        padding-right: 40%;
     }
 
     @media (min-width: 768px) {
@@ -167,14 +167,14 @@ import "swiper/css";
             modules: [Pagination],
             loop: true,
             centeredSlides: false,
-            spaceBetween: 15,
+            spaceBetween: 30,
             slidesPerView: "auto",
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            slidesOffsetBefore: 25,
-            slidesOffsetAfter: 40,
+            slidesOffsetBefore: -10,
+            slidesOffsetAfter: 30,
         });
     }
 </script>
