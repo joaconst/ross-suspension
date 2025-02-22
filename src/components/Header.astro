@@ -1,27 +1,42 @@
 ---
-// components/Header.astro
 import "../styles/global.css";
 ---
 
-<header
-    class="fixed left-0 top-0 w-[300px] h-full flex-col items-center p-6 bg-inherit hidden md:flex"
->
-    <div class="mb-6">
-        <h1 class="text-3xl font-extrabold text-center">Ross Suspensión</h1>
+<!-- Menú desktop -->
+<header class="fixed left-0 top-0 w-[200px] lg:w-[300px] h-full flex-col items-start p-6 bg-inherit hidden md:flex">
+    <!-- Logo -->
+    <div class="mb-8 w-full">
+        <h1 class="text-3xl font-bold text-center md:text-center md:text-2xl">Ross Suspensión</h1>
     </div>
-    <nav class="font-medium">
-        <ul class="flex flex-col space-y-6">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contacto</a></li>
+  
+    <!-- Menú -->
+    <nav class="w-full font-medium text-2xl md:text-[20px]">
+        <ul class="flex flex-col space-y-2 w-full">
+            <li class="w-full">
+                <a href="#" 
+                   class="w-full h-12 flex items-center rounded-lg transition-all duration-500 hover:bg-white/20 hover:pl-6 md:hover:pl-3">
+                   Inicio
+                </a>
+            </li>
+            <li class="w-full">
+                <a href="#" 
+                   class="w-full h-12 flex items-center rounded-lg transition-all duration-500 hover:bg-white/20 hover:pl-6 md:hover:pl-3">
+                   Servicios
+                </a>
+            </li>
+            <li class="w-full">
+                <a href="#" 
+                   class="w-full h-12 flex items-center rounded-lg transition-all duration-500 hover:bg-white/20 hover:pl-6 md:hover:pl-3">
+                   Contacto
+                </a>
+            </li>
         </ul>
     </nav>
-</header>
+  </header>
+  
 
 <!-- Menú móvil -->
-<header
-    class="fixed top-0 left-0 right-0 md:hidden z-10"
->
+<header class="fixed top-0 left-0 right-0 md:hidden z-10 bg-[#212121]/60">
     <div class="flex items-center justify-between px-4 py-3">
         <!-- Logo -->
         <a href="/" class="text-xl font-bold">Ross Suspensión</a>
@@ -43,22 +58,22 @@ import "../styles/global.css";
     <!-- Menú desplegable -->
     <nav
         id="mobile-menu"
-        class="md:hidden absolute hidden w-full h-aut overflow-hidden"
+        class="md:hidden absolute hidden w-full h-aut overflow-hidden bg-[#212121]/60"
     >
         <div class="px-4 pt-2 pb-3 space-y-1">
             <a
                 href="#"
-                class="menu-item block px-3 py-2 hover:bg-secondary/20 hover:text-primary rounded-md transition-all"
+                class="menu-item block px-3 py-2 hover:bg-[#212121]/80 rounded-md transition-all"
                 >Inicio</a
             >
             <a
                 href=""
-                class="menu-item block px-3 py-2  hover:bg-secondary/20 hover:text-primary rounded-md transition-all"
+                class="menu-item block px-3 py-2 hover:bg-[#212121]/80 rounded-md transition-all"
                 >Servicios</a
             >
             <a
                 href=""
-                class="menu-item block px-3 py-2  hover:bg-secondary/20 hover:text-primary rounded-md transition-all"
+                class="menu-item block px-3 py-2 hover:bg-[#212121]/80 rounded-md transition-all"
                 >Contacto</a
             >
         </div>
