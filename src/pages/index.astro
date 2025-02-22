@@ -3,9 +3,10 @@ import '../styles/global.css'
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Slider from '../components/Slider.astro';
-import { desktopImages, mobileImages } from '../data/images';
+import { desktopImages, desktopImages2, mobileImages, mobileImages2 } from '../data/images';
 import Cards from '../components/Cards.astro';
 import Services from '../components/Services.astro';
+import LocationCards from '../components/LocationCards.astro';
 ---
 
 <Layout>
@@ -13,7 +14,8 @@ import Services from '../components/Services.astro';
 	<main class="md:pl-[200px] lg:pl-[300px]">
 		<Slider desktopImages={desktopImages} mobileImages={mobileImages} />
 		<Cards />
-		<Slider desktopImages={desktopImages} mobileImages={mobileImages} />
+		<Slider desktopImages={desktopImages2} mobileImages={mobileImages2} />
 		<Services />
+		<LocationCards />
 	</main>
 </Layout>

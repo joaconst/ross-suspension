@@ -4,55 +4,87 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 interface Props {
-  desktopImages: {
-    url: string;
-    alt: string;
-  }[];
-  mobileImages: {
-    url: string;
-    alt: string;
-  }[];
+  // Slider Superior
+  desktopImages: { url: string; alt: string }[];
+  mobileImages: { url: string; alt: string }[];
+  // Slider Inferior
+  desktopImages2?: { url: string; alt: string }[]; // Opcional
+  mobileImages2?: { url: string; alt: string }[]; // Opcional
 }
 
-// Ejemplo de imágenes de respaldo
-const defaultDesktopImages = [{ url: "", alt: "Imagen Desktop" }];
-const defaultMobileImages = [{ url: "", alt: "Imagen Mobile" }];
+// Valores por defecto para el slider superior
+const defaultDesktopImages = [{ url: "ruta-a-tu-imagen-desktop1.jpg", alt: "Imagen Desktop Superior" }];
+const defaultMobileImages = [{ url: "ruta-a-tu-imagen-mobile1.jpg", alt: "Imagen Mobile Superior" }];
+
+// Valores por defecto para el slider inferior
+const defaultDesktopImages2 = [{ url: "ruta-a-tu-imagen-desktop2.jpg", alt: "Imagen Desktop Inferior" }];
+const defaultMobileImages2 = [{ url: "ruta-a-tu-imagen-mobile2.jpg", alt: "Imagen Mobile Inferior" }];
 
 const {
   desktopImages = defaultDesktopImages,
   mobileImages = defaultMobileImages,
+  desktopImages2 = defaultDesktopImages2,
+  mobileImages2 = defaultMobileImages2,
 } = Astro.props;
 ---
 
 <section class="carousel-container">
-  <!-- Slider para Desktop -->
-  <div class="swiper desktop-slider">
-    <div class="swiper-wrapper">
-      {
-        desktopImages.map((image) => (
+  <!-- Slider Superior -->
+  <div class="slider-container">
+    <!-- Slider para Desktop Superior -->
+    <div class="swiper desktop-slider">
+      <div class="swiper-wrapper">
+        {desktopImages.map((image) => (
           <div class="swiper-slide">
             <img src={image.url} alt={image.alt} />
           </div>
-        ))
-      }
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
+
+    <!-- Slider para Mobile Superior -->
+    <div class="swiper mobile-slider">
+      <div class="swiper-wrapper">
+        {mobileImages.map((image) => (
+          <div class="swiper-slide">
+            <img src={image.url} alt={image.alt} />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 
-  <!-- Slider para Mobile -->
-  <div class="swiper mobile-slider">
-    <div class="swiper-wrapper">
-      {
-        mobileImages.map((image) => (
+  <!-- Slider Inferior -->
+{desktopImages2 !== defaultDesktopImages2 && mobileImages2 !== defaultMobileImages2 && (
+  <div class="slider-container">
+    <!-- Slider para Desktop Inferior -->
+    <div class="swiper desktop-slider-2">
+      <div class="swiper-wrapper">
+        {desktopImages2.map((image) => (
           <div class="swiper-slide">
             <img src={image.url} alt={image.alt} />
           </div>
-        ))
-      }
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
+
+    <!-- Slider para Mobile Inferior -->
+    <div class="swiper mobile-slider-2">
+      <div class="swiper-wrapper">
+        {mobileImages2.map((image) => (
+          <div class="swiper-slide">
+            <img src={image.url} alt={image.alt} />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
-</section>
+)}
+
 
 <style>
   .carousel-container {
@@ -60,20 +92,28 @@ const {
     margin-bottom: 40px;
   }
 
-  /* Por defecto se muestra el slider desktop */
-  .desktop-slider {
+  .slider-container {
+    margin-bottom: 40px;
+  }
+
+  /* Mostrar slider desktop por defecto */
+  .desktop-slider,
+  .desktop-slider-2 {
     display: block;
   }
-  .mobile-slider {
+  .mobile-slider,
+  .mobile-slider-2 {
     display: none;
   }
 
   /* En pantallas pequeñas, se oculta el slider desktop y se muestra el mobile */
   @media (max-width: 640px) {
-    .desktop-slider {
+    .desktop-slider,
+    .desktop-slider-2 {
       display: none;
     }
-    .mobile-slider {
+    .mobile-slider,
+    .mobile-slider-2 {
       display: block;
       height: 75vh;
     }
@@ -98,17 +138,17 @@ const {
 
   @media (min-width: 768px) {
     .swiper-slide img {
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
     }
-}
+  }
 </style>
 
 <script>
   import Swiper from "swiper";
   import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-  // Inicialización del slider desktop
+  // Inicialización del slider superior para Desktop
   const desktopSwiper = new Swiper(".desktop-slider", {
     modules: [Navigation, Pagination, Autoplay],
     loop: true,
@@ -122,7 +162,7 @@ const {
     },
   });
 
-  // Inicialización del slider mobile
+  // Inicialización del slider superior para Mobile
   const mobileSwiper = new Swiper(".mobile-slider", {
     modules: [Navigation, Pagination, Autoplay],
     loop: true,
@@ -132,6 +172,35 @@ const {
     },
     pagination: {
       el: ".mobile-slider .swiper-pagination",
+      clickable: true,
+    },
+    slidesPerView: 1,
+  });
+
+  // Inicialización del slider inferior para Desktop
+  const desktopSwiper2 = new Swiper(".desktop-slider-2", {
+    modules: [Navigation, Pagination, Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".desktop-slider-2 .swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  // Inicialización del slider inferior para Mobile
+  const mobileSwiper2 = new Swiper(".mobile-slider-2", {
+    modules: [Navigation, Pagination, Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".mobile-slider-2 .swiper-pagination",
       clickable: true,
     },
     slidesPerView: 1,
