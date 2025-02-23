@@ -8,8 +8,19 @@ import Footer from '../../components/common/Footer.astro';
 
 <Layout>
     <Header />
-    <main class="pl-0 md:pl-[200px] lg:pl-[300px]">
+    <main class="pl-0 md:pl-[200px] lg:pl-[300px] min-h-screen">    
         <Services />
     </main>
     <Footer />
 </Layout>
+
+<style>
+    main {
+        background: linear-gradient(
+            45deg,
+            hsl(240deg 4% 10%) 0%,
+            hsl(240deg 5% 12%) 50%,
+            hsl(240deg 5% 14%) 100%
+        );
+    }
+</style>
