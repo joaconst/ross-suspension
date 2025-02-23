@@ -2,6 +2,7 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "../../styles/slider.css"
 
 interface Props {
   // Slider Superior
@@ -86,63 +87,7 @@ const {
 )}
 
 
-<style>
-  .carousel-container {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .slider-container {
-    margin-bottom: 40px;
-  }
-
-  /* Mostrar slider desktop por defecto */
-  .desktop-slider,
-  .desktop-slider-2 {
-    display: block;
-  }
-  .mobile-slider,
-  .mobile-slider-2 {
-    display: none;
-  }
-
-  /* En pantallas pequeñas, se oculta el slider desktop y se muestra el mobile */
-  @media (max-width: 640px) {
-    .desktop-slider,
-    .desktop-slider-2 {
-      display: none;
-    }
-    .mobile-slider,
-    .mobile-slider-2 {
-      display: block;
-      height: 75vh;
-    }
-  }
-
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .swiper-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  @media (min-width: 768px) {
-    .swiper-slide img {
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-    }
-  }
-</style>
+<link rel="stylesheet" href="styles/slider.css">
 
 <script>
   import Swiper from "swiper";
