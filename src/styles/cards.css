@@ -1,0 +1,24 @@
+.mobile-cards .swiper-slide {
+    width: 75% !important;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.mobile-cards .swiper-slide:not(.swiper-slide-active) {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.mobile-cards .swiper-wrapper {
+    padding-left: 30px;
+    padding-right: 40%;
+}
+
+@media (min-width: 768px) {
+    .desktop-cards {
+        display: grid !important;
+    }
+    .mobile-cards {
+        display: none !important;
+    }
+}

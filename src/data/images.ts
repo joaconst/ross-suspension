@@ -1,8 +1,8 @@
 export const desktopImages = [
-  { url: '/images/slider-desktop/slider-1.webp', alt: 'Descripción desktop 1' },
-  { url: '/images/slider-desktop/slider-2.webp', alt: 'Descripción desktop 2' },
-  { url: '/images/slider-desktop/slider-3.webp', alt: 'Descripción desktop 3' },
-  { url: '/images/slider-desktop/slider-4.webp', alt: 'Descripción desktop 4' },
+  { url: '/images/slider-desktop/top/slider-1.webp', alt: 'Descripción desktop 1' },
+  { url: '/images/slider-desktop/top/slider-2.webp', alt: 'Descripción desktop 2' },
+  { url: '/images/slider-desktop/top/slider-3.webp', alt: 'Descripción desktop 3' },
+  { url: '/images/slider-desktop/top/slider-4.webp', alt: 'Descripción desktop 4' },
 ];
 
 export const mobileImages = [
@@ -14,9 +14,7 @@ export const mobileImages = [
 ];
 
 export const desktopImages2 = [
-  { url: 'slider.avif', alt: 'Descripción desktop 1' },
-  { url: 'sldier2.avif', alt: 'Descripción desktop 2' },
-  { url: 'slider3.avif', alt: 'Descripción desktop 3' },
+  { url: '/images/slider-desktop/bottom/slider-1.webp', alt: 'Descripción desktop 1' },
 ];
 
 export const mobileImages2 = [

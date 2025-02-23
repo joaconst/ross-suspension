@@ -61,34 +61,44 @@
     }
 }
 
+/* Estilos del ícono hamburguesa */
 .hamburger-icon {
-    width: 24px;
-    height: 18px;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.hamburger-icon span {
+    width: 24px;
+    height: 18px;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger-icon span {
     display: block;
-    height: 2px;
     width: 100%;
-    background-color: currentColor;
-    border-radius: 4px;
-    transition:
-        transform 0.4s ease,
-        opacity 0.2s ease;
-}
-
-.hamburger-icon.active span:nth-child(1) {
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger-icon.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger-icon.active span:nth-child(2) {
+  }
+  
+  .hamburger-icon.active span:nth-child(2) {
     opacity: 0;
-}
-
-.hamburger-icon.active span:nth-child(3) {
+  }
+  
+  .hamburger-icon.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-}
+  }
+  
+  /* Animaciones del menú móvil */
+  #mobile-menu {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  #mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+  }

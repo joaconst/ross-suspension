@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+/* Fuente Poppins para textos */
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fuente Anton para títulos */
+.font-anton {
+    font-family: 'Anton', sans-serif;
+}
+
+/* Aplicar Poppins como fuente predeterminada para el cuerpo */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Aplicar Anton para todos los títulos (h1, h2, h3, etc.) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Anton', sans-serif;
+}

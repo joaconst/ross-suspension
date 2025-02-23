@@ -2,27 +2,56 @@
 import "../../styles/global.css";
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-2 text-center w-full min-h-[600px] md:h-[600px] gap-4">
-    <!-- Ubicación -->
-    <article class="flex flex-col justify-between h-full">
-        <header>
-            <h2 class="mb-4 text-2xl font-bold">Ubicación</h2>
-        </header>
-        <div class="flex-1">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0487171397357!2d-64.2056485!3d-31.3804724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298bf3c9b2353%3A0xa5e199d1fff6b887!2sRoss%20Suspension!5e0!3m2!1ses!2sus!4v1676421571605!5m2!1ses!2sus"
-                class="w-full h-full min-h-[300px] md:min-h-0 rounded-3xl"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-            ></iframe>
-        </div>
-    </article>
+<section
+    class="flex flex-col items-center w-full min-h-[400px] md:min-h-[300px]"
+>
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 text-center w-full min-h-[400px] md:min-h-[300px] gap-4"
+    >
+        <!-- Ubicación -->
+        <article class="flex flex-col justify-between h-full w-full">
+            <header>
+                <h2 class="mb-4 text-2xl">Ubicación</h2>
+            </header>
+            <div class="flex-1">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0487171397357!2d-64.2056485!3d-31.3804724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298bf3c9b2353%3A0xa5e199d1fff6b887!2sRoss%20Suspension!5e0!3m2!1ses!2sus!4v1676421571605!5m2!1ses!2sus"
+                    class="w-full h-full min-h-[250px] md:min-h-[150px] rounded-3xl"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"></iframe>
+            </div>
+        </article>
 
-    <!-- Tarjetas -->
-    <article class="flex flex-col justify-between h-full">
-        <header>
-            <h2 class="mb-4 text-2xl font-bold">Tarjetas</h2>
-        </header>
-    </article>
+        <!-- Tarjetas -->
+        <article class="flex flex-col justify-between h-full w-full">
+            <header>
+                <h2 class="mb-4 text-2xl">Tarjetas</h2>
+            </header>
+            <div
+                class="flex-1 flex flex-col items-center justify-center gap-6 bg-white rounded-3xl p-4"
+            >
+            <p class="text-lg text-gray-800 text-center">
+                Consultar promociones con el Banco Macro
+            </p>
+                <div class="flex gap-8">
+                    <img
+                        src="/images/targets/visa.svg"
+                        alt="Visa"
+                        class="h-24 md:h-16"
+                    />
+                    <img
+                        src="/images/targets/mastercard.svg"
+                        alt="Mastercard"
+                        class="h-24 md:h-16"
+                    />
+                </div>
+                <img
+                    src="/images/targets/macro.svg"
+                    alt="Banco Macro"
+                    class="h-28 md:h-20"
+                />
+            </div>
+        </article>
+    </div>
 </section>

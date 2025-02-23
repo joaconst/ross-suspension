@@ -1,21 +1,20 @@
-// Obtiene los elementos del DOM
+// Elementos del DOM
 const mobileToggle = document.getElementById("menu-toggle") as HTMLButtonElement;
 const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
 const hamburgerIcon = mobileToggle?.querySelector(".hamburger-icon") as HTMLElement;
 let isAnimating = false;
 
-// Evento cuando el DOM está cargado
+// Evento DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
-    const inicioLinks = document.querySelectorAll('a[href="/"]'); // Selecciona todos los enlaces de inicio
-
+    const inicioLinks = document.querySelectorAll('a[href="/"]');
+    
     inicioLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
             if (window.location.pathname === "/") {
-                event.preventDefault(); // Evita la recarga
-                window.scrollTo({ top: 0, behavior: "smooth" }); // Hace scroll hacia arriba
-
-                // Cierra el menú en mobile si está abierto
-                if (window.innerWidth < 768 && !mobileMenu.classList.contains("hidden")) {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                
+                if (window.innerWidth < 768 && mobileMenu.classList.contains("open")) {
                     closeMobileMenu();
                 }
             }
@@ -23,61 +22,65 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Verifica que los elementos existen antes de agregar eventos
+// Eventos principales
 if (mobileToggle && mobileMenu && hamburgerIcon) {
-    // Evento para abrir/cerrar menú móvil
     mobileToggle.addEventListener("click", (e: Event) => {
         e.stopPropagation();
         toggleMobileMenu();
     });
 
-    // Cierra el menú si se hace clic fuera de él
     document.addEventListener("click", (event: Event) => {
-        if (window.innerWidth < 768 && !mobileMenu.classList.contains("hidden")) {
+        if (mobileMenu.classList.contains("open")) {
             const target = event.target as Node;
-            if (!mobileMenu.contains(target) && !mobileToggle.contains(target) && !isAnimating) {
+            if (!mobileMenu.contains(target) && !mobileToggle.contains(target)) {
                 closeMobileMenu();
             }
         }
     });
 
-    // Cierra el menú al hacer clic en un enlace dentro del menú móvil
     document.querySelectorAll<HTMLAnchorElement>("#mobile-menu a").forEach((link) => {
         link.addEventListener("click", () => {
-            if (!isAnimating) {
+            if (window.innerWidth < 768) {
                 closeMobileMenu();
             }
         });
     });
 }
 
-// Función para alternar el menú móvil
+// Funciones del menú
 function toggleMobileMenu() {
     if (isAnimating) return;
-
+    
+    mobileMenu.classList.toggle("open");
     hamburgerIcon.classList.toggle("active");
     isAnimating = true;
 
-    if (mobileMenu.classList.contains("hidden")) {
+    if (mobileMenu.classList.contains("open")) {
         mobileMenu.classList.remove("hidden");
-        mobileMenu.classList.add("menu-open");
-        mobileMenu.classList.remove("menu-close");
-
-        setTimeout(() => (isAnimating = false), 400);
+        mobileMenu.style.opacity = '1';
+        mobileMenu.style.transform = 'translateY(0)';
     } else {
-        closeMobileMenu();
+        mobileMenu.style.opacity = '0';
+        mobileMenu.style.transform = 'translateY(-20px)';
     }
+
+    setTimeout(() => {
+        isAnimating = false;
+        if (!mobileMenu.classList.contains("open")) {
+            mobileMenu.classList.add("hidden");
+        }
+    }, 300);
 }
 
-// Función para cerrar el menú móvil
 function closeMobileMenu() {
     if (isAnimating) return;
-
+    
+    mobileMenu.classList.remove("open");
     hamburgerIcon.classList.remove("active");
     isAnimating = true;
 
-    mobileMenu.classList.add("menu-close");
-    mobileMenu.classList.remove("menu-open");
+    mobileMenu.style.opacity = '0';
+    mobileMenu.style.transform = 'translateY(-20px)';
 
     setTimeout(() => {
         mobileMenu.classList.add("hidden");
