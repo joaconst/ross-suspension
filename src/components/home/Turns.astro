@@ -1,15 +1,23 @@
 ---
-const message = "Hola Ross Suspensión! Quiero un turno, por favor. Estoy interesado en…";
+const message =
+  "Hola Ross Suspensión! Quiero un turno, por favor. Estoy interesado en…";
 const encodedMessage = encodeURIComponent(message);
 const whatsappLink = `https://wa.me/5493516704096?text=${encodedMessage}`;
 ---
 
-<section class="h-[50vh] bg-right bg-cover bg-no-repeat relative rounded-l-3xl mb-10" style="background-image: url('/images/turn.webp');">
-  <div class="absolute inset-0 flex flex-col items-center justify-end pb-12 sm:justify-center sm:pb-0 backdrop-blur-xs rounded-l-3xl">
-      <a href={whatsappLink}
-         target="_blank"
-         class="inline-block px-8 py-5 text-2xl sm:text-2xl sm:px-12 sm:py-6 bg-[#212121] rounded-xl hover:bg-white/30 hover:border-2 hover:border-[#212121] transition-all duration-300 sm:transform sm:translate-y-[-25px] w-full max-w-[260px] sm:max-w-[320px] text-center transform -translate-y-8">
-          <h3>Reserva tu turno ahora</h3>
-      </a>
+<section
+  class="h-[50vh] bg-right bg-cover bg-no-repeat relative rounded-l-3xl mb-10"
+  style="background-image: url('/images/turn.webp');"
+>
+  <div
+    class="absolute inset-0 flex flex-col items-center justify-end pb-12 sm:justify-center sm:pb-0 backdrop-blur-xs rounded-l-3xl"
+  >
+    <a
+      href={whatsappLink}
+      target="_blank"
+      class="inline-block px-8 py-5 text-2xl sm:text-2xl sm:px-12 sm:py-6 bg-[#212121] rounded-xl hover:bg-white/30 hover:border-2 hover:border-[#212121] transition-all duration-300 sm:transform sm:translate-y-[-25px] w-full max-w-[260px] sm:max-w-[320px] text-center transform -translate-y-8 sm:whitespace-nowrap"
+    >
+      <h3>¡ Reserva tu turno ahora !</h3>
+    </a>
   </div>
 </section>
