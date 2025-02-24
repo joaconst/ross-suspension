@@ -3,7 +3,7 @@ export interface Props {
   serviceName: string;
 }
 const { serviceName } = Astro.props;
-const message = `Hola Ross suspensión! 🏁 Quiero más información sobre ${serviceName}.`;
+const message = `Hola Ross suspensión! Quiero más información sobre ${serviceName}.`;
 ---
 <a 
   href={`https://wa.me/5493516704096?text=${encodeURIComponent(message)}`}
