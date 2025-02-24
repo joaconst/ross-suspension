@@ -1,0 +1,24 @@
+---
+const { image, title, description } = Astro.props;
+---
+<section class="grid grid-cols-1 md:grid-cols-2 h-auto md:h-screen p-4 md:p-0 mt-11 md:mt-0">
+  <!-- Imagen -->
+  <article class="md:order-none h-[50vh] md:h-full flex justify-center">
+    <picture class="h-full w-full md:w-auto">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover rounded-3xl md:rounded-l-3xl md:rounded-r-none"
+      />
+    </picture>
+  </article>
+
+  <!-- Contenido -->
+  <article class="flex items-center justify-center p-6 md:p-12">
+    <div>
+      <h2 class="md:text-4xl text-3xl text-center mb-14">{title}</h2>
+      <p>{description}</p>
+    </div>
+  </article>
+</section>
+

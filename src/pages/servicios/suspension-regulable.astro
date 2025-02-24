@@ -1,0 +1,19 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import ServiceDetail from "../../components/services/ServiceDetail.astro";
+import Footer from "../../components/common/Footer.astro";
+---
+
+<Layout>
+    <Header />
+    <main class="pl-0 md:pl-[200px] lg:pl-[300px] min-h-screen">
+        <ServiceDetail
+            title="Suspensión regulable"
+            image="/images/regulable.webp"
+            description="Fabricación propia de suspensión regulable en altura. Con grandes ventajas tales como, ajustar la altura del vehículo según el terreno y optimizar la aerodinámica de la conducción en autopista. Nuestra línea de suspensión deportiva es la única en el mundo con 18 meses de garantía!"
+        />
+    </main>
+    <Footer />
+</Layout>

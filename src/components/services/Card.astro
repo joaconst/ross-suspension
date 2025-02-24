@@ -1,4 +1,6 @@
 ---
+import ContactButton from '../services/Contact.astro';
+
 export interface Props {
   title: string;
   description: string;
@@ -9,49 +11,44 @@ export interface Props {
 
 const { title, description, image, contactLink = "#", learnMoreLink = "#" } = Astro.props;
 ---
-
 <div class="group bg-white/60 hover:bg-white/30 p-6 rounded-2xl flex flex-col transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl backdrop-blur-sm relative overflow-hidden">
-    <!-- Contenedor de imagen -->
-    <div class="relative rounded-xl h-64 [filter:drop-shadow(0_0_30px_rgba(0,0,0,0.4))]">
-        <img src={image} alt={title} 
-            class="w-full h-full object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-300 shadow-[0_25px_50px_-12px_rgba(255,255,255,0.25)]"/>
-    </div>
-    <!-- Contenido de texto -->
-    <div class="flex flex-col flex-grow pt-6">
-        <h3 class="text-2xl text-white mb-3 transition-colors">
-            {title}
-        </h3>
-        <p class="text-gray-200 text-base line-clamp-2 flex-grow">
-            {description}
-        </p>
-    </div>
+  <!-- Contenedor de imagen -->
+  <div class="relative rounded-xl h-64 [filter:drop-shadow(0_0_30px_rgba(0,0,0,0.4))]">
+    <img src={image} alt={title} 
+         class="w-full h-full object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-300 shadow-[0_25px_50px_-12px_rgba(255,255,255,0.25)]"/>
+  </div>
+  <!-- Contenido de texto -->
+  <div class="flex flex-col flex-grow pt-6">
+    <h3 class="text-2xl text-white mb-3 transition-colors">
+      {title}
+    </h3>
+    <p class="text-gray-200 text-base line-clamp-2 flex-grow">
+      {description}
+    </p>
+  </div>
 
-    <!-- Overlay con botones para desktop -->
-    <div class="absolute inset-0 hidden md:flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div class="flex gap-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-            <a href={contactLink} class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all">
-                Contacto
-            </a>
-            <a href={learnMoreLink} class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all delay-75">
-                Ver más
-            </a>
-        </div>
+  <!-- Overlay con botones para desktop -->
+  <div class="absolute inset-0 hidden md:flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <div class="flex gap-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+      <ContactButton serviceName={title} />
+      <a href={learnMoreLink} class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all delay-75">
+        Ver más
+      </a>
     </div>
+  </div>
 
-    <!-- Versión mobile -->
-    <div class="absolute inset-0 md:hidden flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent"
-        x-data="{ open: false }"
-        @click="open = !open"
-        :class="{ 'opacity-100': open, 'opacity-0': !open }">
-        <div class="flex gap-4" :class="open ? 'translate-y-0' : 'translate-y-8'">
-            <a href={contactLink} class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all">
-                Contacto
-            </a>
-            <a href={learnMoreLink} class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all">
-                Ver más
-            </a>
-        </div>
+  <!-- Versión mobile -->
+  <div class="absolute inset-0 md:hidden flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent"
+       x-data="{ open: false }"
+       @click="open = !open"
+       :class="{ 'opacity-100': open, 'opacity-0': !open }">
+    <div class="flex gap-4" :class="open ? 'translate-y-0' : 'translate-y-8'">
+      <ContactButton serviceName={title} />
+      <a href={learnMoreLink} class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all">
+        Ver más
+      </a>
     </div>
+  </div>
 </div>
 
 <script src="//unpkg.com/alpinejs" defer></script>

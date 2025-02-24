@@ -1,0 +1,19 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import ServiceDetail from "../../components/services/ServiceDetail.astro";
+import Footer from "../../components/common/Footer.astro";
+---
+
+<Layout>
+    <Header />
+    <main class="pl-0 md:pl-[200px] lg:pl-[300px] min-h-screen">
+        <ServiceDetail
+            title="Alineación/Corrección de combas/Balanceo de ruedas"
+            image="/images/services/services-1.webp"
+            description="Lo sugerimos dos veces al año o cada 8000km aproximadamente, exceptuando imprevistos de índole mayor. Mantener el vehículo bien alineado asegura un correcto desgaste de los neumáticos."
+        />
+    </main>
+    <Footer />
+</Layout>

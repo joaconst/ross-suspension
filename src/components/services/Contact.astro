@@ -1,0 +1,14 @@
+---
+export interface Props {
+  serviceName: string;
+}
+const { serviceName } = Astro.props;
+const message = `Hola Ross suspensión! 🏁 Quiero más información sobre ${serviceName}.`;
+---
+<a 
+  href={`https://wa.me/5493516704096?text=${encodeURIComponent(message)}`}
+  target="_blank"
+  class="px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-xl w-full text-center transition-all"
+>
+  Contacto
+</a>
