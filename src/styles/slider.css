@@ -7,6 +7,10 @@
     margin-bottom: 40px;
   }
 
+  .swiper-pagination-bullet {
+    background-color: #c2c1c1;
+  }
+
   /* Mostrar slider desktop por defecto */
   .desktop-slider,
   .desktop-slider-2 {

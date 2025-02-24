@@ -1,6 +1,8 @@
 ---
+import Contact from "../../components/services/Contact.astro";
 const { image, title, description } = Astro.props;
 ---
+
 <section class="grid grid-cols-1 md:grid-cols-2 h-auto md:h-screen p-4 md:p-0 mt-11 md:mt-0">
   <!-- Imagen -->
   <article class="md:order-none h-[50vh] md:h-full flex justify-center">
@@ -15,9 +17,12 @@ const { image, title, description } = Astro.props;
 
   <!-- Contenido -->
   <article class="flex items-center justify-center p-6 md:p-12">
-    <div>
-      <h2 class="md:text-4xl text-3xl text-center mb-14">{title}</h2>
-      <p>{description}</p>
+    <div class="text-center">
+      <h2 class="md:text-4xl text-3xl mb-6">{title}</h2>
+      <p class="mb-10">{description}</p>
+
+      <!-- Agregar el botón de contacto -->
+      <Contact serviceName={title} />
     </div>
   </article>
 </section>
