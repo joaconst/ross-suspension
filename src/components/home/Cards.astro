@@ -6,23 +6,23 @@ import "../../styles/global.css";
 <main class="relative overflow-hidden">
     <!-- Desktop version (3 columnas) -->
     <section
-        class="desktop-cards hidden md:grid md:grid-cols-3 w-full h-auto gap-4 text-center  mb-10"
+        class="desktop-cards hidden md:grid md:grid-cols-3 w-full h-auto gap-4 text-center mb-10"
     >
         <article
-            class="relative rounded-3xl w-full aspect-square overflow-hidden"
+            class="relative rounded-4xl w-full aspect-square overflow-hidden"
         >
-            <a href="/servicios/suspension-regulable">
+            <a href="/servicios/suspension-standard">
                 <header
                     class="absolute top-4 left-1/2 transform -translate-x-1/2 z-10"
                 >
                     <h2 class="rounded-lg text-xl px-2 py-1">
-                        Suspensión regulable
+                        Suspensión standard
                     </h2>
                 </header>
                 <picture>
                     <img
-                        src="/images/regulable.webp"
-                        alt="Suspensión regulable"
+                        src="/images/standard.webp"
+                        alt="Suspensión standard"
                         class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                     />
                 </picture>
@@ -51,20 +51,20 @@ import "../../styles/global.css";
         </article>
 
         <article
-            class="relative rounded-l-4xl w-full aspect-square overflow-hidden"
+            class="relative rounded-3xl w-full aspect-square overflow-hidden"
         >
-            <a href="/servicios/suspension-standard">
+            <a href="/servicios/suspension-regulable">
                 <header
                     class="absolute top-4 left-1/2 transform -translate-x-1/2 z-10"
                 >
                     <h2 class="rounded-lg text-xl px-2 py-1">
-                        Suspensión standard
+                        Suspensión regulable
                     </h2>
                 </header>
                 <picture>
                     <img
-                        src="/images/standard.webp"
-                        alt="Suspensión standard"
+                        src="/images/regulable.webp"
+                        alt="Suspensión regulable"
                         class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                     />
                 </picture>
@@ -72,23 +72,24 @@ import "../../styles/global.css";
         </article>
     </section>
 
-    <!-- Mobile version (slider) -->
-    <div class="swiper mobile-cards md:hidden mb-10 ">
+    <!-- Versión móvil (slider) -->
+    <div class="swiper mobile-cards md:hidden mb-10">
         <div class="swiper-wrapper">
+            <!-- Suspensión standard -->
             <div class="swiper-slide">
                 <article
                     class="relative rounded-3xl w-[80vw] mx-2 aspect-square overflow-hidden"
                 >
-                    <a href="/servicios/suspension-regulable">
+                    <a href="/servicios/suspension-standard">
                         <header class="absolute top-4 left-4 z-10">
                             <h2 class="rounded-lg text-xl px-2 py-1">
-                                Suspensión regulable
+                                Suspensión standard
                             </h2>
                         </header>
                         <picture>
                             <img
-                                src="/images/regulable.webp"
-                                alt="Suspensión regulable"
+                                src="/images/standard.webp"
+                                alt="Suspensión standard"
                                 class="w-full h-full object-cover"
                             />
                         </picture>
@@ -96,6 +97,7 @@ import "../../styles/global.css";
                 </article>
             </div>
 
+            <!-- Suspensión deportiva -->
             <div class="swiper-slide">
                 <article
                     class="relative rounded-3xl w-[80vw] mx-2 aspect-square overflow-hidden"
@@ -117,20 +119,21 @@ import "../../styles/global.css";
                 </article>
             </div>
 
+            <!-- Suspensión regulable -->
             <div class="swiper-slide">
                 <article
                     class="relative rounded-3xl w-[80vw] mx-2 aspect-square overflow-hidden"
                 >
-                    <a href="/servicios/suspension-standard">
+                    <a href="/servicios/suspension-regulable">
                         <header class="absolute top-4 left-4 z-10">
                             <h2 class="rounded-lg text-xl px-2 py-1">
-                                Suspensión standard
+                                Suspensión regulable
                             </h2>
                         </header>
                         <picture>
                             <img
-                                src="/images/standard.webp"
-                                alt="Suspensión standard"
+                                src="/images/regulable.webp"
+                                alt="Suspensión regulable"
                                 class="w-full h-full object-cover"
                             />
                         </picture>
