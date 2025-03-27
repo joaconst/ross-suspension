@@ -14,7 +14,9 @@ export const mobileImages = [
 ];
 
 export const desktopImages2 = [
-  { url: '/images/slider-desktop/bottom/slider-1.webp', alt: 'Descripción desktop 1' }
+  { url: '/images/slider-desktop/bottom/slider-1.webp', alt: 'Descripción desktop 1' },
+  { url: '/images/slider-desktop/bottom/slider-2.webp', alt: 'Descripción desktop 2' },
+  { url: '/images/slider-desktop/bottom/slider-3.webp', alt: 'Descripción desktop 3' }
 ];
 
 export const mobileImages2 = [
